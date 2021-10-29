@@ -22,6 +22,8 @@ console.log(randomDestination)
 let selectedFood = [];
 let selectedTrans = [];
 let selectedFun = [];
+let menuSelect = 0;
+let optionSelect = 0;
 
 //Confirmed Options.
 let confirmDes = "";
@@ -41,17 +43,16 @@ function reSelect(array){
     let userInput = prompt("Would you like to reselect this option? Y/N");
 
     if(userInput == "Y"){
-        //randomSelect();
+        menuSelect = 0;
     }else if(userInput == "y"){
-        //randomSelect();
+        menuSelect = 0;
     }else if(userInput == "Yes"){
-        //randomSelect();
+        menuSelect = 0;
     }else if(userInput == "yes"){
-        //randomSelect();
+        menuSelect = 0;
     }else if(userInput == "N"){
-        //Do nothing.
+        menuSelect = 3;
     }
-    //return array;
 }
 
 //User Confirms Trip Information and is given the option to Reselect.
@@ -78,6 +79,8 @@ function confirm(array){
     }
 }
 
+//When All Selection is Confirmed. Console Log or Alert the Entire trip.
 function showTrip(){
-
+    //Console Log Trip.
 }
+
