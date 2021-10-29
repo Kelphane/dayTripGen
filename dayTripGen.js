@@ -15,29 +15,36 @@
 //Trip Options Array.
 let desArray = ["Dallas", "NYC", "Salt Lake City", "Oklahoma City"];
 let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys"];
-let transArray = ["Rental Car", "Airplane", ""];
-let funArray = [];
+let transArray = ["Rental Car", "Airplane", "Boat", "Rocket"];
+let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing"];
 
 //Holds the randomly picked item from our arrays.
 let randomDestination = randomSelect(desArray);
-console.log(randomDestination);
 let randomRestaurant = randomSelect(foodArray);
 let randomTransport = randomSelect(transArray);
 let randomEntertainment = randomSelect(funArray);
 let menuSelect = 0;
+let optionSelect = 0;
+console.log(randomDestination);
 
 //Confirmed Options.
-let confirmDes = false;
-let confirmFood = false;
-let confirmTrans = false;
-let confirmFun = false;
+let confirmDestination = false;
+let confirmRestaurant = false;
+let confirmTransport = false;
+let confirmEntertainment = false;
 
 //FUNCTIONS///////////////////////////////////////
-//MENU OPTIONS
+//MENU OPTIONS:
 //0: Randomly
 //1: Confirm
 //2: Reselect
 //3: Show
+/////////////////
+//OPTION SELECT:
+//0: Des
+//1: Rest
+//2: Trans
+//3: Entertain
 
 //Produces a random number.
 function randomSelect(array){
@@ -74,23 +81,76 @@ function reSelect(){
 }
 
 //User Confirms Trip Information and is given the option to Reselect.
-function confirm(array){
+function confirm(){
     let loop = true;
 
     while(loop){
         let userInput = prompt("Would you like to confirm this option? Y/N");
+
         //Load Selected Option into Confirm.
         if(userInput == "Y"){
-            //Load Selected into Confirm
+            switch(optionSelect){
+                case"0":
+                    confirmDestination = true;
+                    break;
+                case"1":
+                    confirmRestaurant = true;
+                    break;
+                case"2":
+                    confirmTransport = true;
+                    break;
+                case"3":
+                    confirmEntertainment = true;
+                    break;
+            }
             loop = false;
         }else if(userInput == "y"){
-            //Load Selected into Confirm
+            switch(optionSelect){
+                case"0":
+                    confirmDestination = true;
+                    break;
+                case"1":
+                    confirmRestaurant = true;
+                    break;
+                case"2":
+                    confirmTransport = true;
+                    break;
+                case"3":
+                    confirmEntertainment = true;
+                    break;
+            }
             loop = false;
         }else if(userInput == "Yes"){
-            //Load Selected into Confirm
+            switch(optionSelect){
+                case"0":
+                    confirmDestination = true;
+                    break;
+                case"1":
+                    confirmRestaurant = true;
+                    break;
+                case"2":
+                    confirmTransport = true;
+                    break;
+                case"3":
+                    confirmEntertainment = true;
+                    break;
+            }
             loop = false;
         }else if(userInput == "yes"){
-            //Load Selected into Confirm
+            switch(optionSelect){
+                case"0":
+                    confirmDestination = true;
+                    break;
+                case"1":
+                    confirmRestaurant = true;
+                    break;
+                case"2":
+                    confirmTransport = true;
+                    break;
+                case"3":
+                    confirmEntertainment = true;
+                    break;
+            }
             loop = false;
         }else if(userInput == "N"){
             menuSelect = 2;
