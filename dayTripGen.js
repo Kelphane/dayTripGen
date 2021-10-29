@@ -19,10 +19,10 @@ let transArray = ["Rental Car", "Airplane", "Boat", "Rocket"];
 let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing"];
 
 //Holds the randomly picked item from our arrays.
-let randomDestination = randomSelect(desArray);
-let randomRestaurant = randomSelect(foodArray);
-let randomTransport = randomSelect(transArray);
-let randomEntertainment = randomSelect(funArray);
+let randomDestination = "";
+let randomRestaurant = "";
+let randomTransport = "";
+let randomEntertainment = "";
 let menuSelect = 0;
 let optionSelect = 0;
 console.log(randomDestination);
@@ -35,18 +35,39 @@ let confirmEntertainment = false;
 
 //FUNCTIONS///////////////////////////////////////
 //MENU OPTIONS:
-//0: Randomly
-//1: Confirm
-//2: Reselect
-//3: Show
+//0: Randomly Select Option.
+//1: Confirm Option.
+//2: Reselect Option.
+//3: Show Trip Options.
 /////////////////
 //OPTION SELECT:
-//0: Des
-//1: Rest
-//2: Trans
-//3: Entertain
+//0: Destination.
+//1: Restaurant.
+//2: Transportation.
+//3: Entertainment.
 
 //Produces a random number.
+function randomOption(){
+    let loop = true;
+
+    while(loop){
+        switch(optionSelect){
+            case"0":
+                randomDestination = randomSelect(desArray);
+                break;
+            case"1":
+                randomRestaurant = randomSelect(foodArray);
+                break;
+            case"2":
+                randomTransport = randomSelect(transArray);
+                break;
+            case"3":
+                randomEntertainment = randomSelect(funArray);
+                break;
+        }
+    }
+}
+
 function randomSelect(array){
     let  randomNum = Math.floor(Math.random() * array.length);
     randomNum = array[randomNum];
@@ -179,4 +200,24 @@ function showTrip(){
 //FRAMEWORK///////////////////////////////
 //While loop which holds:
 //if statements to Select Option.
-//AND Switch statement to Slect Menu Options.
+//AND Switch statement to Select Menu Options.
+
+/* while(confirmDestination && confirmRestaurant && confirmTransport && confirmEntertainment != true){
+    alert("Welcome to Trip Planner!");
+
+    switch(menuSelect){
+        case"0":
+            randomOption();
+            break;
+        case"1":
+            confirm();
+            break;
+        case"2":
+            reSelect();
+            break;
+        case"3":
+            showTrip();
+            break;
+    }
+} */
+
