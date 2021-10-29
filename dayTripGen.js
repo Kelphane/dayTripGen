@@ -43,20 +43,33 @@ function randomSelect(array){
 }
 
 //Reselects Trip Options.
-function reSelect(array){
-    let userInput = prompt("Would you like to reselect this option? Y/N");
+function reSelect(){
+    let loop = true;
 
-    if(userInput == "Y"){
-        menuSelect = 0;
-    }else if(userInput == "y"){
-        menuSelect = 0;
-    }else if(userInput == "Yes"){
-        menuSelect = 0;
-    }else if(userInput == "yes"){
-        menuSelect = 0;
-    }else if(userInput == "N"){
-        menuSelect = 3;
+    while(loop){
+        let userInput = prompt("Would you like to reselect this option? Y/N");
+        if(userInput == "Y"){
+            menuSelect = 0;
+            loop = false;
+        }else if(userInput == "y"){
+            menuSelect = 0;
+            loop = false;
+        }else if(userInput == "Yes"){
+            menuSelect = 0;
+            loop = false;
+        }else if(userInput == "yes"){
+            menuSelect = 0;
+            loop = false;
+        }else if(userInput == "N"){
+            menuSelect = 3;
+            loop = false;
+        }else{
+            alert("I'm sorry, I didn't quite catch that.");
+        }
     }
+    
+
+    
 }
 
 //User Confirms Trip Information and is given the option to Reselect.
@@ -85,7 +98,7 @@ function confirm(array){
 
 //When All Selection is Confirmed. Console Log or Alert the Entire trip.
 function showTrip(){
-    //Console Log Trip.
+    //Confirm 
 }
 
 //FRAMEWORK///////////////////////////////
