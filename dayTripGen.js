@@ -14,32 +14,36 @@
 
 //Trip Options Array.
 let desArray = ["Dallas", "NYC", "Salt Lake City", "Oklahoma City"];
-let foodArray = [];
-let transArray = [];
+let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys"];
+let transArray = ["Rental Car", "Airplane", ""];
 let funArray = [];
 
 //Holds the randomly picked item from our arrays.
-let randomDestination = randomSelect(desArray)
-console.log(randomDestination)
-let selectedFood = [];
-let selectedTrans = [];
-let selectedFun = [];
+let randomDestination = randomSelect(desArray);
+console.log(randomDestination);
+let randomRestaurant = randomSelect(foodArray);
+let randomTransport = randomSelect(transArray);
+let randomEntertainment = randomSelect(funArray);
 let menuSelect = 0;
-let optionSelect = 0;
 
 //Confirmed Options.
-let confirmDes = "";
-let confirmFood = "";
-let confirmTrans = "";
-let confirmFun = "";
+let confirmDes = false;
+let confirmFood = false;
+let confirmTrans = false;
+let confirmFun = false;
 
 //FUNCTIONS///////////////////////////////////////
+//MENU OPTIONS
+//0: Randomly
+//1: Confirm
+//2: Reselect
+//3: Show
 
 //Produces a random number.
 function randomSelect(array){
     let  randomNum = Math.floor(Math.random() * array.length);
-    randomNum = array[randomNum]
-    return randomNum; 
+    randomNum = array[randomNum];
+    return randomNum;
 }
 
 //Reselects Trip Options.
