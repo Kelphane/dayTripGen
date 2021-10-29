@@ -23,6 +23,12 @@ let selectedFood = [];
 let selectedTrans = [];
 let selectedFun = [];
 
+//Confirmed Options.
+let confirmDes = "";
+let confirmFood = "";
+let confirmTrans = "";
+let confirmFun = "";
+
 //Produces a random number.
 function randomSelect(array){
     let  randomNum = Math.floor(Math.random() * array.length);
@@ -31,7 +37,7 @@ function randomSelect(array){
 }
 
 //Reselects Trip Options.
-function reSelect(){
+function reSelect(array){
     let userInput = prompt("Would you like to reselect this option? Y/N");
 
     if(userInput == "Y"){
@@ -45,10 +51,31 @@ function reSelect(){
     }else if(userInput == "N"){
         //Do nothing.
     }
+    //return array;
 }
 
-function confirm(){
+//User Confirms Trip Information and is given the option to Reselect.
+function confirm(array){
+    let userInput = prompt("Would you like to confirm this option? Y/N");
 
+    //Load Selected Option into Confirm.
+    if(userInput == "Y"){
+        //Load Selected into Confirm
+    }else if(userInput == "y"){
+        //Load Selected into Confirm
+    }else if(userInput == "Yes"){
+        //Load Selected into Confirm
+    }else if(userInput == "yes"){
+        //Load Selected into Confirm
+    }else if(userInput == "N"){
+        //Return to Reselect.
+    }else if(userInput == "n"){
+        //Return to Reselect.
+    }else if(userInput == "No"){
+        //Return to Reselect.
+    }else if(userInput == "no"){
+        //Return to Reselect.
+    }
 }
 
 function showTrip(){
