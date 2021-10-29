@@ -10,6 +10,8 @@
 //6: Be able to Confirm Options (Func)
 //7: Display Trip to Console or Alert (Func)
 
+//VARIBLES//////////////////////////////////////
+
 //Trip Options Array.
 let desArray = ["Dallas", "NYC", "Salt Lake City", "Oklahoma City"];
 let foodArray = [];
@@ -30,6 +32,8 @@ let confirmDes = "";
 let confirmFood = "";
 let confirmTrans = "";
 let confirmFun = "";
+
+//FUNCTIONS///////////////////////////////////////
 
 //Produces a random number.
 function randomSelect(array){
@@ -69,13 +73,13 @@ function confirm(array){
     }else if(userInput == "yes"){
         //Load Selected into Confirm
     }else if(userInput == "N"){
-        //Return to Reselect.
+        menuSelect = 2;
     }else if(userInput == "n"){
-        //Return to Reselect.
+        menuSelect = 2;
     }else if(userInput == "No"){
-        //Return to Reselect.
+        menuSelect = 2;
     }else if(userInput == "no"){
-        //Return to Reselect.
+        menuSelect = 2;
     }
 }
 
@@ -84,3 +88,7 @@ function showTrip(){
     //Console Log Trip.
 }
 
+//FRAMEWORK///////////////////////////////
+//While loop which holds:
+//if statements to Select Option.
+//AND Switch statement to Slect Menu Options.
