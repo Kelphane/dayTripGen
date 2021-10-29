@@ -11,19 +11,23 @@
 //7: Display Trip to Console or Alert (Func)
 
 //Trip Options Array.
-let desArray = [];
+let desArray = ["Dallas", "NYC", "Salt Lake City", "Oklahoma City"];
 let foodArray = [];
 let transArray = [];
 let funArray = [];
 
-//Holds Selects Details.
-let selectedDes = [];
+//Holds the randomly piked item from our arrays.
+let randomDestination = randomSelect(desArray)
+console.log(randomDestination)
 let selectedFood = [];
 let selectedTrans = [];
 let selectedFun = [];
 
-function randomSelect(){
-
+//Produces a random number.
+function randomSelect(array){
+    let  randomNum = Math.floor(Math.random() * array.length);
+    randomNum = array[randomNum]
+    return randomNum; 
 }
 
 function reSelect(){
