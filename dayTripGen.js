@@ -66,34 +66,45 @@ function reSelect(){
         }else{
             alert("I'm sorry, I didn't quite catch that.");
         }
-    }
-    
-
-    
+    }    
 }
 
 //User Confirms Trip Information and is given the option to Reselect.
 function confirm(array){
-    let userInput = prompt("Would you like to confirm this option? Y/N");
+    let loop = true;
 
-    //Load Selected Option into Confirm.
-    if(userInput == "Y"){
-        //Load Selected into Confirm
-    }else if(userInput == "y"){
-        //Load Selected into Confirm
-    }else if(userInput == "Yes"){
-        //Load Selected into Confirm
-    }else if(userInput == "yes"){
-        //Load Selected into Confirm
-    }else if(userInput == "N"){
-        menuSelect = 2;
-    }else if(userInput == "n"){
-        menuSelect = 2;
-    }else if(userInput == "No"){
-        menuSelect = 2;
-    }else if(userInput == "no"){
-        menuSelect = 2;
+    while(loop){
+        let userInput = prompt("Would you like to confirm this option? Y/N");
+        //Load Selected Option into Confirm.
+        if(userInput == "Y"){
+            //Load Selected into Confirm
+            loop = false;
+        }else if(userInput == "y"){
+            //Load Selected into Confirm
+            loop = false;
+        }else if(userInput == "Yes"){
+            //Load Selected into Confirm
+            loop = false;
+        }else if(userInput == "yes"){
+            //Load Selected into Confirm
+            loop = false;
+        }else if(userInput == "N"){
+            menuSelect = 2;
+            loop = false;
+        }else if(userInput == "n"){
+            menuSelect = 2;
+            loop = false;
+        }else if(userInput == "No"){
+            menuSelect = 2;
+            loop = false;
+        }else if(userInput == "no"){
+            menuSelect = 2;
+            loop = false;
+        }else{
+            alert("I'm sorry, I didn't quite catch that.");
+        }
     }
+    
 }
 
 //When All Selection is Confirmed. Console Log or Alert the Entire trip.
