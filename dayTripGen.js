@@ -16,7 +16,7 @@ let foodArray = [];
 let transArray = [];
 let funArray = [];
 
-//Holds the randomly piked item from our arrays.
+//Holds the randomly picked item from our arrays.
 let randomDestination = randomSelect(desArray)
 console.log(randomDestination)
 let selectedFood = [];
@@ -30,8 +30,21 @@ function randomSelect(array){
     return randomNum; 
 }
 
+//Reselects Trip Options.
 function reSelect(){
+    let userInput = prompt("Would you like to reselect this option? Y/N");
 
+    if(userInput == "Y"){
+        //randomSelect();
+    }else if(userInput == "y"){
+        //randomSelect();
+    }else if(userInput == "Yes"){
+        //randomSelect();
+    }else if(userInput == "yes"){
+        //randomSelect();
+    }else if(userInput == "N"){
+        //Do nothing.
+    }
 }
 
 function confirm(){
