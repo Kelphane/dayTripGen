@@ -46,28 +46,41 @@ let confirmEntertainment = false;
 //2: Transportation.
 //3: Entertainment.
 
-//Produces a random number.
+//Function Randomly Selects Activities.
 function randomOption(){
     let loop = true;
 
     while(loop){
         switch(optionSelect){
+            //Case for Destination Options.
             case"0":
                 randomDestination = randomSelect(desArray);
+                alert(`${randomDestination} was selected!`);
+                menuSelect = 1;
                 break;
+            //Case for Restaurant Options.
             case"1":
                 randomRestaurant = randomSelect(foodArray);
+                alert(`${randomRestaurant} was selected!`);
+                menuSelect = 1;
                 break;
+            //Case for Transportation Options.
             case"2":
                 randomTransport = randomSelect(transArray);
+                alert(`${randomTransport} was selected!`);
+                menuSelect = 1;
                 break;
+            //Case for Entertainment Options.
             case"3":
                 randomEntertainment = randomSelect(funArray);
+                alert(`${randomEntertainment} was selected!`);
+                menuSelect = 1;
                 break;
         }
     }
 }
 
+//Produces a random number.
 function randomSelect(array){
     let  randomNum = Math.floor(Math.random() * array.length);
     randomNum = array[randomNum];
@@ -102,17 +115,18 @@ function reSelect(){
 }
 
 //User Confirms Trip Information and is given the option to Reselect.
-function confirm(){
+function confirm(strng){
     let loop = true;
 
     while(loop){
-        let userInput = prompt("Would you like to confirm this option? Y/N");
+        let userInput = prompt(`Would you like to confirm ${strng}? Y/N`);
 
         //Load Selected Option into Confirm.
-        if(userInput == "Y"){
+        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes"){
             switch(optionSelect){
                 case"0":
                     confirmDestination = true;
+                    console.log("you entered 0")
                     break;
                 case"1":
                     confirmRestaurant = true;
@@ -125,7 +139,8 @@ function confirm(){
                     break;
             }
             loop = false;
-        }else if(userInput == "y"){
+        }
+        /* else if(userInput == "y"){
             switch(optionSelect){
                 case"0":
                     confirmDestination = true;
@@ -171,7 +186,7 @@ function confirm(){
                 case"3":
                     confirmEntertainment = true;
                     break;
-            }
+            } */
             loop = false;
         }else if(userInput == "N"){
             menuSelect = 2;
