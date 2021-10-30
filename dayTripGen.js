@@ -27,6 +27,7 @@ let randomEntertainment = "";
 //Navigation Variable.
 let menuSelect = 0;
 let optionSelect = 0;
+let isDone = false;
 
 //Confirmed Options bool.
 let confirmDestination = false;
@@ -50,38 +51,38 @@ let confirmEntertainment = false;
 //2: Transportation.
 //3: Entertainment.
 
-//Function Randomly Selects Activities.
+//Function Randomly Selects Activities. Menu Option 00.
 function randomOption(){
 
     switch(optionSelect){
         //Case for Destination Options.
         case"0":
             randomDestination = randomSelect(desArray);
-            alert(`${showOption()} was selected!`);
+            alert(`${showOption()} was selected for Destination!!`);
             menuSelect = 1;
             break;
         //Case for Restaurant Options.
         case"1":
             randomRestaurant = randomSelect(foodArray);
-            alert(`${showOption()} was selected!`);
+            alert(`${showOption()} was selected for Restaurant!`);
             menuSelect = 1;
             break;
         //Case for Transportation Options.
         case"2":
             randomTransport = randomSelect(transArray);
-            alert(`${showOption()} was selected!`);
+            alert(`${showOption()} was selected for Transportation!`);
             menuSelect = 1;
             break;
         //Case for Entertainment Options.
         case"3":
             randomEntertainment = randomSelect(funArray);
-            alert(`${showOption()} was selected!`);
+            alert(`${showOption()} was selected for Entertainment!`);
             menuSelect = 1;
             break;
     }
 }
 
-//User Confirms Trip Information and is given the option to Reselect.
+//User Confirms Trip Information and is given the option to Reselect. Menu Option 01.
 function confirm(){
     let loop = true;
 
@@ -122,17 +123,17 @@ function confirm(){
     
 }
 
-//Reselects Trip Options.
+//Reselects Trip Options. Menu Option 02.
 function reSelect(){
     let loop = true;
 
     while(loop){
-        let userInput = prompt("Would you like to reselect this option? Y/N");
+        let userInput = prompt(`Would you like to reselect ${showOtion()}? Y/N`);
         if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yEs" || userInput == "YES" || userInput == "yeS"){
             menuSelect = 0;
             loop = false;
         }else if(userInput == "N" || userInput == "n" || userInput == "NO" || userInput == "No" || userInput == "no" || userInput == "nO"){
-            menuSelect = 3;
+            menuSelect = 1;
             loop = false;
         }else{
             alert("I'm sorry, I didn't quite catch that.");
@@ -145,7 +146,7 @@ function showTrip(){
     //Confirm 
 }
 
-//Produces a random number.
+//Produces a random option.
 function randomSelect(array){
     let  randomNum = Math.floor(Math.random() * array.length);
     randomNum = array[randomNum];
@@ -170,8 +171,21 @@ function showOption(){
     }
 }
 
+//Finds Options that have not been Selected yet.
 function router(){
-
+    if(confirmDestination == false){
+        menuSelect = 0;
+        optionSelect = 0;
+    }else if(confirmRestaurant == false){
+        menuSelect = 0;
+        optionSelect = 1;
+    }else if(confirmTransport == false){
+        menuSelect = 0;
+        optionSelect = 2;
+    }else if(confirmEntertainment == false){
+        menuSelect = 0;
+        optionSelect = 3
+    }
 }
 
 //FRAMEWORK///////////////////////////////
@@ -179,8 +193,9 @@ function router(){
 //if statements to Select Option.
 //AND Switch statement to Select Menu Options.
 
-/* while(confirmDestination && confirmRestaurant && confirmTransport && confirmEntertainment != true){
-    alert("Welcome to Trip Planner!");
+//alert("Welcome to Trip Planner!");
+
+/* while(isDone != true){
 
     switch(menuSelect){
         case"0":
