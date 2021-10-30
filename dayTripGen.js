@@ -39,6 +39,8 @@ let confirmEntertainment = false;
 //1: Confirm Option.
 //2: Reselect Option.
 //3: Show Trip Options.
+//8: Help
+//9: Exit
 /////////////////
 //OPTION SELECT:
 //0: Destination.
@@ -48,43 +50,33 @@ let confirmEntertainment = false;
 
 //Function Randomly Selects Activities.
 function randomOption(){
-    let loop = true;
-
-    while(loop){
-        switch(optionSelect){
-            //Case for Destination Options.
-            case"0":
-                randomDestination = randomSelect(desArray);
-                alert(`${randomDestination} was selected!`);
-                menuSelect = 1;
-                break;
-            //Case for Restaurant Options.
-            case"1":
-                randomRestaurant = randomSelect(foodArray);
-                alert(`${randomRestaurant} was selected!`);
-                menuSelect = 1;
-                break;
-            //Case for Transportation Options.
-            case"2":
-                randomTransport = randomSelect(transArray);
-                alert(`${randomTransport} was selected!`);
-                menuSelect = 1;
-                break;
-            //Case for Entertainment Options.
-            case"3":
-                randomEntertainment = randomSelect(funArray);
-                alert(`${randomEntertainment} was selected!`);
-                menuSelect = 1;
-                break;
-        }
+    switch(optionSelect){
+        
+        //Case for Destination Options.
+        case"0":
+            randomDestination = randomSelect(desArray);
+            alert(`${showOption()} was selected!`);
+            menuSelect = 1;
+            break;
+        //Case for Restaurant Options.
+        case"1":
+            randomRestaurant = randomSelect(foodArray);
+            alert(`${showOption()} was selected!`);
+            menuSelect = 1;
+            break;
+        //Case for Transportation Options.
+        case"2":
+            randomTransport = randomSelect(transArray);
+            alert(`${showOption()} was selected!`);
+            menuSelect = 1;
+            break;
+        //Case for Entertainment Options.
+        case"3":
+            randomEntertainment = randomSelect(funArray);
+            alert(`${showOption()} was selected!`);
+            menuSelect = 1;
+            break;
     }
-}
-
-//Produces a random number.
-function randomSelect(array){
-    let  randomNum = Math.floor(Math.random() * array.length);
-    randomNum = array[randomNum];
-    return randomNum;
 }
 
 //Reselects Trip Options.
@@ -93,19 +85,10 @@ function reSelect(){
 
     while(loop){
         let userInput = prompt("Would you like to reselect this option? Y/N");
-        if(userInput == "Y"){
+        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yEs" || userInput == "YES" || userInput == "yeS"){
             menuSelect = 0;
             loop = false;
-        }else if(userInput == "y"){
-            menuSelect = 0;
-            loop = false;
-        }else if(userInput == "Yes"){
-            menuSelect = 0;
-            loop = false;
-        }else if(userInput == "yes"){
-            menuSelect = 0;
-            loop = false;
-        }else if(userInput == "N"){
+        }else if(userInput == "N" || userInput == "n" || userInput == "NO" || userInput == "No" || userInput == "no" || userInput == "nO"){
             menuSelect = 3;
             loop = false;
         }else{
@@ -153,6 +136,30 @@ function showTrip(){
     //Confirm 
 }
 
+//Produces a random number.
+function randomSelect(array){
+    let  randomNum = Math.floor(Math.random() * array.length);
+    randomNum = array[randomNum];
+    return randomNum;
+}
+
+function showOption(){
+    switch(optionSelect){
+        case"0":
+            return randomDestination;
+            break;
+        case"1":
+            return randomRestaurant;
+            break;
+        case"2":
+            return randomTransport;
+            break;
+        case"3":
+            return randomEntertainment;
+            break;
+    }
+}
+
 //FRAMEWORK///////////////////////////////
 //While loop which holds:
 //if statements to Select Option.
@@ -173,6 +180,12 @@ function showTrip(){
             break;
         case"3":
             showTrip();
+            break;
+        case"8":
+            help();
+            break;
+        case"9":
+            exit();
             break;
     }
 } */
