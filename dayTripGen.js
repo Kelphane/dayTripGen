@@ -138,66 +138,7 @@ function confirm(strng){
                     confirmEntertainment = true;
                     break;
             }
-            loop = false;
-        }
-        /* else if(userInput == "y"){
-            switch(optionSelect){
-                case"0":
-                    confirmDestination = true;
-                    break;
-                case"1":
-                    confirmRestaurant = true;
-                    break;
-                case"2":
-                    confirmTransport = true;
-                    break;
-                case"3":
-                    confirmEntertainment = true;
-                    break;
-            }
-            loop = false;
-        }else if(userInput == "Yes"){
-            switch(optionSelect){
-                case"0":
-                    confirmDestination = true;
-                    break;
-                case"1":
-                    confirmRestaurant = true;
-                    break;
-                case"2":
-                    confirmTransport = true;
-                    break;
-                case"3":
-                    confirmEntertainment = true;
-                    break;
-            }
-            loop = false;
-        }else if(userInput == "yes"){
-            switch(optionSelect){
-                case"0":
-                    confirmDestination = true;
-                    break;
-                case"1":
-                    confirmRestaurant = true;
-                    break;
-                case"2":
-                    confirmTransport = true;
-                    break;
-                case"3":
-                    confirmEntertainment = true;
-                    break;
-            } */
-            loop = false;
-        }else if(userInput == "N"){
-            menuSelect = 2;
-            loop = false;
-        }else if(userInput == "n"){
-            menuSelect = 2;
-            loop = false;
-        }else if(userInput == "No"){
-            menuSelect = 2;
-            loop = false;
-        }else if(userInput == "no"){
+        }else if(userInput == "N" || userInput == "n" || userInput == "No" || userInput == "no" || userInput == "nO" || userInput == "NO"){
             menuSelect = 2;
             loop = false;
         }else{
