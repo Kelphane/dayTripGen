@@ -18,16 +18,17 @@ let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys"];
 let transArray = ["Rental Car", "Airplane", "Boat", "Rocket"];
 let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing"];
 
-//Holds the randomly picked item from our arrays.
+//Option Variabes
 let randomDestination = "";
 let randomRestaurant = "";
 let randomTransport = "";
 let randomEntertainment = "";
+
+//Navigation Variable.
 let menuSelect = 0;
 let optionSelect = 0;
-console.log(randomDestination);
 
-//Confirmed Options.
+//Confirmed Options bool.
 let confirmDestination = false;
 let confirmRestaurant = false;
 let confirmTransport = false;
@@ -39,10 +40,11 @@ let confirmEntertainment = false;
 //1: Confirm Option.
 //2: Reselect Option.
 //3: Show Trip Options.
+//7: Router.
 //8: Help
 //9: Exit
 /////////////////
-//OPTION SELECT:
+//OPTION MENU:
 //0: Destination.
 //1: Restaurant.
 //2: Transportation.
@@ -50,8 +52,8 @@ let confirmEntertainment = false;
 
 //Function Randomly Selects Activities.
 function randomOption(){
+
     switch(optionSelect){
-        
         //Case for Destination Options.
         case"0":
             randomDestination = randomSelect(desArray);
@@ -79,6 +81,47 @@ function randomOption(){
     }
 }
 
+//User Confirms Trip Information and is given the option to Reselect.
+function confirm(){
+    let loop = true;
+
+    while(loop){
+        let userInput = prompt(`Would you like to confirm ${showOption()}? Y/N`);
+
+        //Load Selected Option into Confirm.
+        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yeS" || userInput == "yEs" || userInput == "YES"){
+            switch(optionSelect){
+                case"0":
+                    confirmDestination = true;
+                    router();
+                    loop = false;
+                    break;
+                case"1":
+                    confirmRestaurant = true;
+                    router();
+                    loop = false;
+                    break;
+                case"2":
+                    confirmTransport = true;
+                    router();
+                    loop = false;
+                    break;
+                case"3":
+                    confirmEntertainment = true;
+                    router();
+                    loop = false;
+                    break;
+            }
+        }else if(userInput == "N" || userInput == "n" || userInput == "No" || userInput == "no" || userInput == "nO" || userInput == "NO"){
+            menuSelect = 2;
+            loop = false;
+        }else{
+            alert("I'm sorry, I didn't quite catch that.");
+        }
+    }
+    
+}
+
 //Reselects Trip Options.
 function reSelect(){
     let loop = true;
@@ -97,40 +140,6 @@ function reSelect(){
     }    
 }
 
-//User Confirms Trip Information and is given the option to Reselect.
-function confirm(strng){
-    let loop = true;
-
-    while(loop){
-        let userInput = prompt(`Would you like to confirm ${strng}? Y/N`);
-
-        //Load Selected Option into Confirm.
-        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes"){
-            switch(optionSelect){
-                case"0":
-                    confirmDestination = true;
-                    console.log("you entered 0")
-                    break;
-                case"1":
-                    confirmRestaurant = true;
-                    break;
-                case"2":
-                    confirmTransport = true;
-                    break;
-                case"3":
-                    confirmEntertainment = true;
-                    break;
-            }
-        }else if(userInput == "N" || userInput == "n" || userInput == "No" || userInput == "no" || userInput == "nO" || userInput == "NO"){
-            menuSelect = 2;
-            loop = false;
-        }else{
-            alert("I'm sorry, I didn't quite catch that.");
-        }
-    }
-    
-}
-
 //When All Selection is Confirmed. Console Log or Alert the Entire trip.
 function showTrip(){
     //Confirm 
@@ -143,6 +152,7 @@ function randomSelect(array){
     return randomNum;
 }
 
+//Returns the Current Selected Option.
 function showOption(){
     switch(optionSelect){
         case"0":
@@ -158,6 +168,10 @@ function showOption(){
             return randomEntertainment;
             break;
     }
+}
+
+function router(){
+
 }
 
 //FRAMEWORK///////////////////////////////
@@ -181,6 +195,8 @@ function showOption(){
         case"3":
             showTrip();
             break;
+        case "7":
+            router();
         case"8":
             help();
             break;
