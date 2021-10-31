@@ -58,7 +58,7 @@ function randomOption(){
         //Case for Destination Options.
         case"0":
             randomDestination = randomSelect(desArray);
-            alert(`${showOption()} was selected for Destination!!`);
+            alert(`${showOption()} was selected for Destination!`);
             menuSelect = 1;
             break;
         //Case for Restaurant Options.
@@ -143,7 +143,12 @@ function reSelect(){
 
 //When All Selection is Confirmed. Console Log or Alert the Entire trip.
 function showTrip(){
-    //Confirm 
+    alert(
+        `Destination: ${randomDestination},
+        Restaurant: ${randomRestaurant},
+        Transportation: ${randomTransport},
+        Entertainment: ${randomEntertainment}.`
+    );
 }
 
 //Produces a random option.
@@ -185,7 +190,10 @@ function router(){
     }else if(confirmEntertainment == false){
         menuSelect = 0;
         optionSelect = 3
-    }
+    }else if(confirmDestination == true && confirmRestaurant == true && confirmTransport == true && confirmEntertainment == true){
+        showTrip();
+        isDone = true; 
+     }
 }
 
 //FRAMEWORK///////////////////////////////
@@ -193,9 +201,9 @@ function router(){
 //if statements to Select Option.
 //AND Switch statement to Select Menu Options.
 
-//alert("Welcome to Trip Planner!");
+alert("Welcome to Trip Planner!");
 
-/* while(isDone != true){
+while(isDone != true){
 
     switch(menuSelect){
         case"0":
@@ -219,5 +227,5 @@ function router(){
             exit();
             break;
     }
-} */
+} 
 
