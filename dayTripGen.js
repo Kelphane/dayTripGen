@@ -41,10 +41,6 @@ let confirmEntertainment = false;
 //0: Randomly Select Option.
 //1: Confirm Option.
 //2: Reselect Option.
-//3: Show Trip Options.
-//7: Router.
-//8: Help
-//9: Exit
 /////////////////
 //OPTION MENU:
 //0: Destination.
@@ -89,6 +85,7 @@ function confirm(){
 
     while(loop){
         let userInput = prompt(`Would you like to confirm ${showOption()}? Y/N`);
+        exitListener(userInput);
         userInput = userInput.toLowerCase();
 
         //Load Selected Option into Confirm.
@@ -131,6 +128,7 @@ function reSelect(){
 
     while(loop){
         let userInput = prompt(`Would you like to reselect ${showOption()}? Y/N`);
+        exitListener(userInput);
         userInput = userInput.toLowerCase();
 
         if(userInput == "y" || userInput == "yes"){
@@ -197,19 +195,28 @@ function router(){
     }else if(confirmEntertainment == false){
         menuSelect = 0;
         optionSelect = 3
-    }else if(confirmDestination == true && confirmRestaurant == true && confirmTransport == true && confirmEntertainment == true){
-        showTrip();
-        isDone = true; 
-     }
+    }
 }
 
 function narrator(){
-
     if(isGreeted == false){
         alert("Welcome to Trip Planner!");
+        alert("Let's get started on your trip!");
+        alert("At any time you can type 'exit' into the prompt to end the Trip Planner!");
         isGreeted = true;
+    }else if(confirmDestination == true && confirmRestaurant == true && confirmTransport == true && confirmEntertainment == true){
+        alert("Looks like this wraps up your trip!");
+        alert("Let's take a look!");
+        showTrip();
+        isDone = true;
     }
-    
+}
+
+function exitListener(strng){
+    strng = strng.toLowerCase();
+    if(strng == "exit"){
+        isDone = true;
+    }
 }
 
 //FRAMEWORK///////////////////////////////
@@ -229,15 +236,6 @@ while(isDone == false){
             break;
         case 2:
             reSelect();
-            break;
-        case 3:
-            showTrip();
-            break;
-        case 8:
-            help();
-            break;
-        case 9:
-            exit();
             break;
     }
 } 
