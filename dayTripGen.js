@@ -128,7 +128,7 @@ function reSelect(){
     let loop = true;
 
     while(loop){
-        let userInput = prompt(`Would you like to reselect ${showOtion()}? Y/N`);
+        let userInput = prompt(`Would you like to reselect ${showOption()}? Y/N`);
         if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yEs" || userInput == "YES" || userInput == "yeS"){
             menuSelect = 0;
             loop = false;
@@ -218,8 +218,6 @@ while(isDone == false){
         case 3:
             showTrip();
             break;
-        case 7:
-            router();
         case 8:
             help();
             break;
