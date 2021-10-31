@@ -56,25 +56,25 @@ function randomOption(){
 
     switch(optionSelect){
         //Case for Destination Options.
-        case"0":
+        case 0:
             randomDestination = randomSelect(desArray);
             alert(`${showOption()} was selected for Destination!`);
             menuSelect = 1;
             break;
         //Case for Restaurant Options.
-        case"1":
+        case 1:
             randomRestaurant = randomSelect(foodArray);
             alert(`${showOption()} was selected for Restaurant!`);
             menuSelect = 1;
             break;
         //Case for Transportation Options.
-        case"2":
+        case 2:
             randomTransport = randomSelect(transArray);
             alert(`${showOption()} was selected for Transportation!`);
             menuSelect = 1;
             break;
         //Case for Entertainment Options.
-        case"3":
+        case 3:
             randomEntertainment = randomSelect(funArray);
             alert(`${showOption()} was selected for Entertainment!`);
             menuSelect = 1;
@@ -92,22 +92,22 @@ function confirm(){
         //Load Selected Option into Confirm.
         if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yeS" || userInput == "yEs" || userInput == "YES"){
             switch(optionSelect){
-                case"0":
+                case 0:
                     confirmDestination = true;
                     router();
                     loop = false;
                     break;
-                case"1":
+                case 1:
                     confirmRestaurant = true;
                     router();
                     loop = false;
                     break;
-                case"2":
+                case 2:
                     confirmTransport = true;
                     router();
                     loop = false;
                     break;
-                case"3":
+                case 3:
                     confirmEntertainment = true;
                     router();
                     loop = false;
@@ -161,16 +161,16 @@ function randomSelect(array){
 //Returns the Current Selected Option.
 function showOption(){
     switch(optionSelect){
-        case"0":
+        case 0:
             return randomDestination;
             break;
-        case"1":
+        case 1:
             return randomRestaurant;
             break;
-        case"2":
+        case 2:
             return randomTransport;
             break;
-        case"3":
+        case 3:
             return randomEntertainment;
             break;
     }
@@ -203,27 +203,27 @@ function router(){
 
 alert("Welcome to Trip Planner!");
 
-while(isDone != true){
+while(isDone == false){
 
     switch(menuSelect){
-        case"0":
+        case 0:
             randomOption();
             break;
-        case"1":
+        case 1:
             confirm();
             break;
-        case"2":
+        case 2:
             reSelect();
             break;
-        case"3":
+        case 3:
             showTrip();
             break;
-        case "7":
+        case 7:
             router();
-        case"8":
+        case 8:
             help();
             break;
-        case"9":
+        case 9:
             exit();
             break;
     }
