@@ -28,6 +28,7 @@ let randomEntertainment = "";
 let menuSelect = 0;
 let optionSelect = 0;
 let isDone = false;
+let isGreeted = false;
 
 //Confirmed Options bool.
 let confirmDestination = false;
@@ -144,7 +145,7 @@ function reSelect(){
     }    
 }
 
-//When All Selection is Confirmed. Console Log or Alert the Entire trip.
+//Console Log or Alert the Entire trip.
 function showTrip(){
     alert(
         `   Destination: ${randomDestination},
@@ -152,6 +153,9 @@ function showTrip(){
         Transportation: ${randomTransport},
         Entertainment: ${randomEntertainment}.`
     );
+
+    console.log(`Destination: ${randomDestination}, Restaurant: ${randomRestaurant},
+    Transportation: ${randomTransport}, Entertainment: ${randomEntertainment}.`);
 }
 
 //Produces a random option.
@@ -199,14 +203,22 @@ function router(){
      }
 }
 
+function narrator(){
+
+    if(isGreeted == false){
+        alert("Welcome to Trip Planner!");
+        isGreeted = true;
+    }
+    
+}
+
 //FRAMEWORK///////////////////////////////
 //While loop which holds:
 //if statements to Select Option.
 //AND Switch statement to Select Menu Options.
 
-alert("Welcome to Trip Planner!");
-
 while(isDone == false){
+    narrator();
 
     switch(menuSelect){
         case 0:
