@@ -88,9 +88,10 @@ function confirm(){
 
     while(loop){
         let userInput = prompt(`Would you like to confirm ${showOption()}? Y/N`);
+        userInput = userInput.toLowerCase();
 
         //Load Selected Option into Confirm.
-        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yeS" || userInput == "yEs" || userInput == "YES"){
+        if(userInput == "y" || userInput == "yes"){
             switch(optionSelect){
                 case 0:
                     confirmDestination = true;
@@ -113,7 +114,7 @@ function confirm(){
                     loop = false;
                     break;
             }
-        }else if(userInput == "N" || userInput == "n" || userInput == "No" || userInput == "no" || userInput == "nO" || userInput == "NO"){
+        }else if(userInput == "n" || userInput == "no"){
             menuSelect = 2;
             loop = false;
         }else{
@@ -129,10 +130,12 @@ function reSelect(){
 
     while(loop){
         let userInput = prompt(`Would you like to reselect ${showOption()}? Y/N`);
-        if(userInput == "Y" || userInput == "y" || userInput == "Yes" || userInput == "yes" || userInput == "yEs" || userInput == "YES" || userInput == "yeS"){
+        userInput = userInput.toLowerCase();
+
+        if(userInput == "y" || userInput == "yes"){
             menuSelect = 0;
             loop = false;
-        }else if(userInput == "N" || userInput == "n" || userInput == "NO" || userInput == "No" || userInput == "no" || userInput == "nO"){
+        }else if(userInput == "n" || userInput == "no"){
             menuSelect = 1;
             loop = false;
         }else{
@@ -144,7 +147,7 @@ function reSelect(){
 //When All Selection is Confirmed. Console Log or Alert the Entire trip.
 function showTrip(){
     alert(
-        `Destination: ${randomDestination},
+        `   Destination: ${randomDestination},
         Restaurant: ${randomRestaurant},
         Transportation: ${randomTransport},
         Entertainment: ${randomEntertainment}.`
