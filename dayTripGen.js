@@ -13,7 +13,7 @@
 //VARIBLES//////////////////////////////////////
 
 //Trip Options Array.
-let desArray = ["Dallas", "NYC", "Salt Lake City", "Oklahoma City"];
+let desArray = ["Dallas", "NYC", "Salt Lake City", "Los Angeles"];
 let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys"];
 let transArray = ["Rental Car", "Airplane", "Boat", "Rocket"];
 let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing"];
