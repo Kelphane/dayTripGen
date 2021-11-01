@@ -86,7 +86,6 @@ function confirm(){
 
     while(loop){
         let userInput = prompt(`Would you like to confirm ${showOption()}? Y/N`);
-        exitListener(userInput);
         userInput = userInput.toLowerCase();
 
         //Load Selected Option into Confirm.
@@ -133,7 +132,6 @@ function reSelect(){
 
     while(loop){
         let userInput = prompt(`Would you like to reselect ${showOption()}? Y/N`);
-        exitListener(userInput);
         userInput = userInput.toLowerCase();
 
         if(userInput == "exit"){
@@ -218,16 +216,6 @@ function narrator(){
         showTrip();
         isDone = true;
         menuSelect = 9;
-    }
-}
-
-//Exits Trip Planner when User types "exit" into prompt.
-function exitListener(strng){
-    strng = strng.toLowerCase();
-    if(strng == "exit"){
-        isDone = true;
-        menuSelect = 9;
-        break;
     }
 }
 
