@@ -13,10 +13,13 @@
 //VARIBLES//////////////////////////////////////
 
 //Trip Options Array.
-let desArray = ["Dallas", "NYC", "Salt Lake City", "Los Angeles"];
-let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys"];
-let transArray = ["Rental Car", "Airplane", "Boat", "Rocket"];
-let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing"];
+let desArray = ["Dallas, TX", "New York City, NY", "Salt Lake City, UT", "Los Angeles, CA", "Las Vegas, NV", 
+    "Seattle, WA", "Kaiserslautern, DE", "Tokyo, JP", "Delhi, IMD", "Shanghai, CN", "Sao Paulo, BR"];
+let foodArray = ["McDonalds", "Burger King", "Carls Jr", "Five Guys", "Del Taco", "Starbucks", "Wing Stop", "Culvers", "Panera"];
+let transArray = ["Rental Car - Luxury", "Airplane - Coach", "Boat", "Rocket", "Rental Car - Economy", "Rental Car - Business", 
+    "Airplane - Business", "Airplane - First Class"];
+let funArray = ["Scuba Diving", "Sky Diving", "Hiking", "Surfing", "Fishing", "Soccer", "Bungee Jumping", "Horseback Riding", 
+    "Sword Fighting", "Game Show"];
 
 //Option Variabes
 let randomDestination = "";
