@@ -157,7 +157,7 @@ function reSelect(){
 function showTrip(){
     alert(
         `Destination: ${randomDestination}, Restaurant: ${randomRestaurant},
-        Transportation: ${randomTransport}, Entertainment: ${randomEntertainment}.`
+    Transportation: ${randomTransport}, Entertainment: ${randomEntertainment}.`
     );
 
     console.log(`Destination: ${randomDestination}, Restaurant: ${randomRestaurant},
