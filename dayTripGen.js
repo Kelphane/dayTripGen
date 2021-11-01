@@ -41,6 +41,7 @@ let confirmEntertainment = false;
 //0: Randomly Select Option.
 //1: Confirm Option.
 //2: Reselect Option.
+//9: Exit Option.
 /////////////////
 //OPTION MENU:
 //0: Destination.
@@ -89,7 +90,9 @@ function confirm(){
         userInput = userInput.toLowerCase();
 
         //Load Selected Option into Confirm.
-        if(userInput == "y" || userInput == "yes"){
+        if(userInput == "exit"){
+            return;
+        }else if(userInput == "y" || userInput == "yes"){
             switch(optionSelect){
                 case 0:
                     confirmDestination = true;
@@ -131,7 +134,9 @@ function reSelect(){
         exitListener(userInput);
         userInput = userInput.toLowerCase();
 
-        if(userInput == "y" || userInput == "yes"){
+        if(userInput == "exit"){
+            return;
+        }else if(userInput == "y" || userInput == "yes"){
             menuSelect = 0;
             loop = false;
         }else if(userInput == "n" || userInput == "no"){
@@ -146,10 +151,8 @@ function reSelect(){
 //Console Log or Alert the Entire trip.
 function showTrip(){
     alert(
-        `   Destination: ${randomDestination},
-        Restaurant: ${randomRestaurant},
-        Transportation: ${randomTransport},
-        Entertainment: ${randomEntertainment}.`
+        `Destination: ${randomDestination}, Restaurant: ${randomRestaurant},
+        Transportation: ${randomTransport}, Entertainment: ${randomEntertainment}.`
     );
 
     console.log(`Destination: ${randomDestination}, Restaurant: ${randomRestaurant},
@@ -198,6 +201,7 @@ function router(){
     }
 }
 
+//Conducts initial Greeting and End Message when User is done.
 function narrator(){
     if(isGreeted == false){
         alert("Welcome to Trip Planner!");
@@ -209,13 +213,16 @@ function narrator(){
         alert("Let's take a look!");
         showTrip();
         isDone = true;
+        menuSelect = 9;
     }
 }
 
+//Exits Trip Planner when User types "exit" into prompt.
 function exitListener(strng){
     strng = strng.toLowerCase();
     if(strng == "exit"){
         isDone = true;
+        menuSelect = 9;
     }
 }
 
@@ -236,6 +243,8 @@ while(isDone == false){
             break;
         case 2:
             reSelect();
+            break;
+        case 9:
             break;
     }
 } 
