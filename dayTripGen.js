@@ -91,6 +91,8 @@ function confirm(){
 
         //Load Selected Option into Confirm.
         if(userInput == "exit"){
+            isDone = true;
+            menuSelect = 9;
             return;
         }else if(userInput == "y" || userInput == "yes"){
             switch(optionSelect){
@@ -135,6 +137,8 @@ function reSelect(){
         userInput = userInput.toLowerCase();
 
         if(userInput == "exit"){
+            isDone = true;
+            menuSelect = 9;
             return;
         }else if(userInput == "y" || userInput == "yes"){
             menuSelect = 0;
@@ -223,6 +227,7 @@ function exitListener(strng){
     if(strng == "exit"){
         isDone = true;
         menuSelect = 9;
+        break;
     }
 }
 
